@@ -71,29 +71,60 @@
         </button>
 
         <form class="form">
-          <h2 class="title-form">Залиште свої дані, ми вам передзвонимо</h2>
+          <h2 class="title-form">Оставьте свои данные, мы вам перезвоним</h2>
           <ul class="list list-group">
-            <li>
+            <li class="item">
               <div class="group-form">
-                <input class="group-input" type="text" placeholder=" ">
-                <label class="group-label">Ім'я</label>
+                <input name="name" id="input-name" class="group-input" type="text" placeholder=" ">
+                <label for="input-name" class="group-label">Имя</label>
+                <svg class="icons-form">
+                  <use href="./images/icons.svg#icon-person-form"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="item">
+              <div class="group-form">
+                <input name="tel" id="input-tel" class="group-input" type="tel" placeholder=" ">
+                <label for="input-tel" class="group-label">Телефон</label>
+                <svg class="icons-form">
+                  <use href="./images/icons.svg#icon-phone-form"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="item">
+              <div class="group-form">
+                <input name="email" id="input-email" class="group-input" type="email" placeholder=" ">
+                <label for="input-email" class="group-label">Почта</label>
+                <svg class="icons-form">
+                  <use href="./images/icons.svg#icon-envelope-form"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="item">
+              <div class="group-form">
+
+                <label for="comment" class="comment-label">Комментарий</label>
+                <textarea name="comment" class="comment-form" id="comment" rows="7"
+                  placeholder="Введите текст"></textarea>
 
               </div>
             </li>
             <li>
-              <div class="group-form">
-                <input class="group-input" type="tel" placeholder=" ">
-                <label class="group-label">Телефон</label>
 
-              </div>
+              <label class="group-checkbox" for="checkbox-privacy"><input name="privacy" class="checkbox-input"
+                  id="checkbox-privacy" type="checkbox">
+                <span class="icon-checkbox"></span>
+                <span class="checkbox-text"> Соглашаюсь с рассылкой и принимаю <a href="" class="link-privacy">Условия
+                    договора</a></span></label>
+
             </li>
           </ul>
-
+          <button class="button-form" type="submit">Отправить</button>
         </form>
 
       </div>
     </div>
-    </div>
+
     <!-- Feature -->
     <section class="feature section">
       <div class="container">
@@ -372,9 +403,17 @@
           </ul>
         </li>
         <li class="item">
-          <p class="footer-title-form">Підпишіться на розсилку</p>
-          <form class="footer-form"> <label class="footer-label"><input class="footer-input" type="email"
-                placeholder="E-mail"></label>
+
+          <form class="footer-form">
+            <p class="footer-title-form">Подпишитесь на рассылку</p>
+
+            <input name="email-subscribe" class="footer-input" type="email" placeholder="E-mail">
+            <button class="button-footer-form" type="submit">
+              <span class="title-button-footer">Подписаться</span>
+              <svg class="icon-footer-button">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
           </form>
         </li>
       </ul>
