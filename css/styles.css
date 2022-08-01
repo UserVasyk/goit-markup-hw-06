@@ -121,9 +121,10 @@ body {
 .hero-button {
   color: var(--primary-bg-color);
   background-color: var(--brand-color-2);
-  border: 0ch;
+  border: none;
   font-weight: 700;
   font-size: 16px;
+  min-width: 200px;
   line-height: 1.875;
   margin-left: auto;
   margin-right: auto;
@@ -222,6 +223,8 @@ body {
   cursor: pointer;
   font-family: inherit;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* hw-03 */
 .visually-hidden {
@@ -590,46 +593,53 @@ img {
   width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  padding: 12px 0 12px 42px;
+  padding: 12px 12px 12px 42px;
   color: #000000;
   background-color: transparent;
   outline: none;
   transition: border var(--transition);
+  height: 40px;
 }
 .list-group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .group-label {
   position: absolute;
   color: var(--paragraph-color);
   z-index: -1;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 42px;
   transition: transform var(--transition);
 }
 .group-form {
   position: relative;
 }
-.group-input:focus {
+.group-input:focus,
+.group-input:hover {
   border: 1px solid var(--brand-color-2);
 }
 .group-input:focus + .group-label,
 .group-input:not(:placeholder-shown) + .group-label {
-  transform: translate(-42px, -33px);
+  transform: translate(-42px, -42px);
 }
 .icons-form {
   position: absolute;
-  top: 11px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 10px;
   width: 18px;
   height: 18px;
 }
-.group-input:focus ~ .icons-form {
+.group-input:focus ~ .icons-form,
+.group-input:hover ~ .icons-form {
   fill: var(--brand-color-2);
 }
 .comment-form {
+  display: block;
   width: 100%;
   outline: none;
   padding: 12px 16px;
@@ -638,27 +648,13 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   max-height: 120px;
+  transition: border var(--transition);
 }
-.comment-form:focus {
+.comment-form:focus,
+.comment-form:hover {
   border: 1px solid var(--brand-color-2);
 }
-.button-form {
-  padding: 10px 55px;
-  color: var(--primary-bg-color);
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  background: #2196f3;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  margin: 0 auto;
-}
+
 .button-close:hover .icon-close,
 .button-close:focus .icon-close {
   fill: var(--brand-color-2);
@@ -673,8 +669,8 @@ img {
   align-items: center;
   display: flex;
   position: relative;
-  width: 425px;
-  margin-bottom: 30px;
+  width: 100%;
+  cursor: pointer;
 }
 .checkbox-input {
   position: absolute;
@@ -687,9 +683,10 @@ img {
 .icon-checkbox {
   width: 16px;
   height: 15px;
-  background-image: url(../images/checkbox.svg);
+  border: 2px solid var(--brand-color-1);
+  border-radius: 2px;
   margin-right: 8px;
-  background-size: contain;
+  background-repeat: no-repeat;
   background-origin: border-box;
   transition: background-image var(--transition);
 }
@@ -712,14 +709,23 @@ img {
 }
 .checkbox-input:checked + .icon-checkbox {
   background-image: url(../images/icon-check.svg);
+  border: 2px solid var(--brand-color-2);
 }
+.checkbox-input:hover + .icon-checkbox,
+.checkbox-input:focus + .icon-checkbox {
+  border: 2px solid var(--brand-color-2);
+}
+.comment-form::placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
 
-.footer-title-form {
-  margin-bottom: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-
-  color: #ffffff;
+  color: rgba(117, 117, 117, 0.5);
+}
+.footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: 1.25;
 }
 .main-list-footer > .item:nth-child(2n) {
   margin-left: 70px;
@@ -739,9 +745,11 @@ img {
   transition: border var(--transition);
   margin-right: 10px;
 }
-.footer-input:focus {
+.footer-input:focus,
+.footer-input:hover {
   border: 1px solid var(--brand-color-2);
 }
+
 .icon-footer-button {
   width: 24px;
   height: 24px;
@@ -764,4 +772,7 @@ img {
 .button-footer-form:hover,
 .button-footer-form:focus {
   background-color: #188ce8;
+}
+.footer-form {
+  display: flex;
 }
