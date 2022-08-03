@@ -127,6 +127,7 @@ body {
   min-width: 200px;
   line-height: 1.875;
   margin-left: auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   margin-right: auto;
   border-radius: 4px;
   padding: 10px 32px;
@@ -633,6 +634,7 @@ img {
   left: 10px;
   width: 18px;
   height: 18px;
+  transition: fill var(--transition);
 }
 .group-input:focus ~ .icons-form,
 .group-input:hover ~ .icons-form {
@@ -686,9 +688,10 @@ img {
   border: 2px solid var(--brand-color-1);
   border-radius: 2px;
   margin-right: 8px;
+  background-image: url(../images/checkbox.svg);
   background-repeat: no-repeat;
   background-origin: border-box;
-  transition: background-image var(--transition);
+  transition: background-image var(--transition), border var(--transition);
 }
 .checkbox-text {
   font-size: 14px;
@@ -755,24 +758,12 @@ img {
   height: 24px;
   fill: var(--primary-bg-color);
 }
-.button-footer-form {
-  padding: 15px 28px;
-  background-color: var(--brand-color-2);
 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-}
 .title-button-footer {
   color: var(--primary-bg-color);
   margin-right: 10px;
 }
-.button-footer-form:hover,
-.button-footer-form:focus {
-  background-color: #188ce8;
-}
+
 .footer-form {
   display: flex;
 }
